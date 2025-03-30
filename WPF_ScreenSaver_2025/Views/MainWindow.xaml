@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPF_ScreenSaver_2025.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="1920" Width="1080" 
+        WindowState="Maximized" WindowStyle="None"
+        Background="Black">
+
+    <!--Exit app when Esc KeyDown-->
+    <Window.InputBindings>
+        <KeyBinding Key="Esc" Command="{Binding EscCommand}" />
+        <KeyBinding Key="Right" Command="{Binding NextCommand}"/>
+        <KeyBinding Key="Left" Command="{Binding BackCommand}"/>
+    </Window.InputBindings>
+    
+    <Grid>
+        <Viewbox StretchDirection="Both" Stretch="Fill">
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Viewbox>
+    </Grid>
+</Window>
