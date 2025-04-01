@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="SettingWindow" Height="450" Width="800">
     <Grid Background="BurlyWood">
-        
+        <TextBlock Text="Setting Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="42"/>
     </Grid>
 </Window>

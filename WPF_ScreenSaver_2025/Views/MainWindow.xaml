@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="1920" Width="1080" 
-        WindowState="Maximized" WindowStyle="None"
-        Background="Black">
+        Title="{Binding Title}" Height="1080" Width="1920" 
+        
+        Background="Black" KeyDown="Window_KeyDown" MouseDown="Window_MouseDown">
+    <!--WindowState="Maximized" WindowStyle="None"-->
 
     <!--Exit app when Esc KeyDown-->
     <Window.InputBindings>
@@ -13,10 +14,49 @@
         <KeyBinding Key="Right" Command="{Binding NextCommand}"/>
         <KeyBinding Key="Left" Command="{Binding BackCommand}"/>
     </Window.InputBindings>
-    
+
     <Grid>
-        <Viewbox StretchDirection="Both" Stretch="Fill">
-            <ContentControl prism:RegionManager.RegionName="ContentRegion" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        </Viewbox>
+
+        <!--启动时候的淡入动画(WebView2控件不支持透明度，或者叠加图层，因此淡入动画不能用)-->
+        <!--<Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:2"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <Grid.Style>-->
+
+
+        <!--<Viewbox StretchDirection="Both" Stretch="Fill" ClipToBounds="True">-->
+            <ContentControl prism:RegionManager.RegionName="ContentRegion"
+                            x:Name="ContentRegion" Width="1920" Height="1080">
+                <!--切换页面时候的淡入淡出动画(WebView2控件不支持透明度，或者叠加图层，因此淡入动画不能用)-->
+                <ContentControl.Style>
+                    <Style TargetType="ContentControl">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsPageChanged}" Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!--<DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:2" AutoReverse="True"/>-->
+                                            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,0" To="0,1080,0,0" Duration="0:0:2" AutoReverse="True" AccelerationRatio="0.9"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+        <!--</Viewbox>-->
     </Grid>
 </Window>

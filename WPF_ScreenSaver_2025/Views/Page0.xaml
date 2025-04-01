@@ -4,12 +4,50 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_ScreenSaver_2025.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" 
+             xmlns:viewmodels="clr-namespace:WPF_ScreenSaver_2025.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:Page0ViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920" Width="1920" Height="1080">
-    <Grid Background="Red" >
-        <TextBlock Text="test1" FontSize="24" Foreground="White" />
-        <TextBlock Text="test2" FontSize="24" Foreground="White" Margin="0,1040,0,0"/>
-        <TextBlock Text="test3" FontSize="24" Foreground="White" Margin="1860,0,0,0"/>
-        <TextBlock Text="test4" FontSize="24" Foreground="White" Margin="1860,1040,0,0"/>
+             d:DesignHeight="1080" d:DesignWidth="1920" >
+    <Grid x:Name="Grid_Root" >
+        <!--<TextBlock Text="Top Left" FontSize="24" Foreground="White" />
+        <TextBlock Text="Bottom Left" FontSize="24" Foreground="White" Margin="0,1040,0,0"/>
+        <TextBlock Text="Top Right" FontSize="24" Foreground="White" Margin="1810,0,0,0"/>
+        <TextBlock Text="Bottom Right" FontSize="24" Foreground="White" Margin="1770,1040,0,0"/>-->
+        <!--<wv2:WebView2 Width="800" Height="800" HorizontalAlignment="Right" x:Name="vvv"/>-->
+        <!--<wv2:WebView2 x:Name="wv_Weather" HorizontalAlignment="Left" VerticalAlignment="Center"
+                      ZoomFactor="{Binding wv_weather_zoomFactor, Mode=TwoWay}" Height="800" Width="800" Margin="0,0,0,0"/>-->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Height="32" Background="White">
+            <ComboBox VerticalContentAlignment="Center" Width="120" SelectedIndex="0"
+                      ItemsSource="{Binding Path=WebViewCollection}" DisplayMemberPath="Name"
+                      SelectedValuePath="Name" SelectedItem="{Binding SelectedWebView,Mode=TwoWay}">
+            </ComboBox>
+            <TextBlock Text="ZoomFactor:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.ZoomFactor, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <TextBlock Text="左:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.MarginLeft, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <TextBlock Text="右:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.MarginRight, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <TextBlock Text="上:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.MarginTop, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <TextBlock Text="下:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.MarginBottom, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <TextBlock Text="宽度:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.Width, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <TextBlock Text="高度:" VerticalAlignment="Center" Margin="4"/>
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+                      Text="{Binding Path=SelectedWebView.Height, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+            <Button Content="预览" Width="40"/>
+            <Button Content="保存" Command="{Binding SaveCommand}" Width="40"/>
+            <Button Content="取消" Command="{Binding CancelCommand}" Width="40"/>
+        </StackPanel>
     </Grid>
 </UserControl>
