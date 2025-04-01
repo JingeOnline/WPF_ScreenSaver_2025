@@ -1,0 +1,26 @@
+[
+  {
+    "PageNumber": 0,
+    "Url": "\u003Ciframe src=\u0022https://www.meteoblue.com/en/weather/widget/three?geoloc=detect\u0026nocurrent=0\u0026noforecast=0\u0026days=5\u0026tempunit=CELSIUS\u0026windunit=KILOMETER_PER_HOUR\u0026layout=dark\u0022  frameborder=\u00220\u0022 scrolling=\u0022NO\u0022 allowtransparency=\u0022true\u0022 sandbox=\u0022allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox\u0022 style=\u0022width: 575px; height: 607px\u0022\u003E\u003C/iframe\u003E\u003Cdiv\u003E\u003C/div\u003E",
+    "Name": "wv_WeatherWeek",
+    "ZoomFactor": 1.6000000000000001,
+    "MarginTop": 60,
+    "MarginBottom": 0,
+    "MarginLeft": 0,
+    "MarginRight": 800,
+    "Height": 1000,
+    "Width": 940
+  },
+  {
+    "PageNumber": 0,
+    "Url": "\u003Ciframe src=\u0022https://free.timeanddate.com/clock/i8xa9g0h/n152/szw700/szh700/hoc444/hbw4/hfceee/cf100/hgr0/fdi76/mqc444/mql10/mqw4/mqd98/mhc444/mhl10/mhw4/mhd98/mmc444/mml10/mmw1/mmd98/hhl50/hhw6\u0022 frameborder=\u00220\u0022 width=\u0022700\u0022 height=\u0022700\u0022\u003E\u003C/iframe\u003E\r\n",
+    "Name": "wv_ClockRound",
+    "ZoomFactor": 1,
+    "MarginTop": 100,
+    "MarginBottom": 0,
+    "MarginLeft": 1100,
+    "MarginRight": 0,
+    "Height": 800,
+    "Width": 800
+  }
+]
