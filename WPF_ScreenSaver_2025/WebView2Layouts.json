@@ -1,7 +1,7 @@
 [
   {
     "PageNumber": 0,
-    "Url": "\u003Ciframe src=\u0022https://www.meteoblue.com/en/weather/widget/three?geoloc=detect\u0026nocurrent=0\u0026noforecast=0\u0026days=5\u0026tempunit=CELSIUS\u0026windunit=KILOMETER_PER_HOUR\u0026layout=dark\u0022  frameborder=\u00220\u0022 scrolling=\u0022NO\u0022 allowtransparency=\u0022true\u0022 sandbox=\u0022allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox\u0022 style=\u0022width: 575px; height: 607px\u0022\u003E\u003C/iframe\u003E\u003Cdiv\u003E\u003C/div\u003E",
+    "Url": "\u003Ciframe src=\u0022https://www.meteoblue.com/en/weather/widget/three/ngunnawal_australia_8349187?geoloc=fixed\u0026nocurrent=0\u0026noforecast=0\u0026days=5\u0026tempunit=CELSIUS\u0026windunit=KILOMETER_PER_HOUR\u0026layout=dark\u0022  frameborder=\u00220\u0022 scrolling=\u0022NO\u0022 allowtransparency=\u0022true\u0022 sandbox=\u0022allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox\u0022 style=\u0022width: 575px; height: 607px\u0022\u003E\u003C/iframe\u003E",
     "Name": "wv_WeatherWeek",
     "ZoomFactor": 1.6000000000000001,
     "MarginTop": 60,
@@ -21,6 +21,30 @@
     "MarginLeft": 1100,
     "MarginRight": 0,
     "Height": 800,
+    "Width": 800
+  },
+  {
+    "PageNumber": 1,
+    "Url": "<div class=\"tradingview-widget-container\">\n    <div class=\"tradingview-widget-container__widget\"></div>\n    <script type=\"text/javascript\" src=\"https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js\" async>\n    {\n    \"symbols\": [\n      [\n        \"FX_IDC:AUDCNY|12M\"\n      ]\n    ],\n    \"chartOnly\": false,\n    \"width\": \"100%\",\n    \"height\": \"100%\",\n    \"locale\": \"zh_CN\",\n    \"colorTheme\": \"dark\",\n    \"autosize\": true,\n    \"showVolume\": false,\n    \"showMA\": false,\n    \"hideDateRanges\": false,\n    \"hideMarketStatus\": false,\n    \"hideSymbolLogo\": false,\n    \"scalePosition\": \"right\",\n    \"scaleMode\": \"Normal\",\n    \"fontFamily\": \"-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif\",\n    \"fontSize\": \"15\",\n    \"noTimeScale\": false,\n    \"valuesTracking\": \"1\",\n    \"changeMode\": \"price-and-percent\",\n    \"chartType\": \"area\",\n    \"maLineColor\": \"#2962FF\",\n    \"maLineWidth\": 1,\n    \"maLength\": 9,\n    \"headerFontSize\": \"medium\",\n    \"backgroundColor\": \"rgba(15, 15, 15, 0)\",\n    \"lineWidth\": 2,\n    \"lineType\": 0,\n    \"dateRanges\": [\n      \"1d|1\",\n      \"1m|30\",\n      \"3m|60\",\n      \"12m|1D\",\n      \"60m|1W\",\n      \"all|1M\"\n    ],\n    \"lineColor\": \"rgba(76, 175, 80, 1)\",\n    \"topColor\": \"rgba(76, 175, 80, 0.6)\",\n    \"bottomColor\": \"rgba(99, 99, 99, 0)\"\n  }\n    </script>\n  </div>",
+    "Name": "wv_RateAUDCNY",
+    "ZoomFactor": 1,
+    "MarginTop": 40,
+    "MarginBottom": 0,
+    "MarginLeft": 0,
+    "MarginRight": 0,
+    "Height": 400,
+    "Width": 800
+  },
+  {
+    "PageNumber": 1,
+    "Url": "<div class=\"tradingview-widget-container\">\n    <div class=\"tradingview-widget-container__widget\"></div>\n    <script type=\"text/javascript\" src=\"https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js\" async>\n    {\n    \"symbols\": [\n      [\n        \"FX_IDC:USDCNY|12M\"\n      ]\n    ],\n    \"chartOnly\": false,\n    \"width\": \"100%\",\n    \"height\": \"100%\",\n    \"locale\": \"zh_CN\",\n    \"colorTheme\": \"dark\",\n    \"autosize\": true,\n    \"showVolume\": false,\n    \"showMA\": false,\n    \"hideDateRanges\": false,\n    \"hideMarketStatus\": false,\n    \"hideSymbolLogo\": false,\n    \"scalePosition\": \"right\",\n    \"scaleMode\": \"Normal\",\n    \"fontFamily\": \"-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif\",\n    \"fontSize\": \"15\",\n    \"noTimeScale\": false,\n    \"valuesTracking\": \"1\",\n    \"changeMode\": \"price-and-percent\",\n    \"chartType\": \"area\",\n    \"maLineColor\": \"#2962FF\",\n    \"maLineWidth\": 1,\n    \"maLength\": 9,\n    \"headerFontSize\": \"medium\",\n    \"backgroundColor\": \"rgba(15, 15, 15, 0)\",\n    \"lineWidth\": 2,\n    \"lineType\": 0,\n    \"dateRanges\": [\n      \"1d|1\",\n      \"1m|30\",\n      \"3m|60\",\n      \"12m|1D\",\n      \"60m|1W\",\n      \"all|1M\"\n    ],\n    \"lineColor\": \"rgba(255, 152, 0, 1)\",\n    \"topColor\": \"rgba(255, 152, 0, 0.6)\",\n    \"bottomColor\": \"rgba(99, 99, 99, 0)\"\n  }\n    </script>\n  </div>",
+    "Name": "wv_RateUSDCNY",
+    "ZoomFactor": 1,
+    "MarginTop": 500,
+    "MarginBottom": 0,
+    "MarginLeft": 0,
+    "MarginRight": 0,
+    "Height": 400,
     "Width": 800
   }
 ]

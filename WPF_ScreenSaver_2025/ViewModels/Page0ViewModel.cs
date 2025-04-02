@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Microsoft.Web.WebView2.Wpf;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -36,18 +37,39 @@ namespace WPF_ScreenSaver_2025.ViewModels
             set { SetProperty(ref _SelectedWebView, value); }
         }
 
+        private VerticalAlignment _SettingBarAlignment = VerticalAlignment.Bottom;
+        public VerticalAlignment SettingBarAlignment
+        {
+            get { return _SettingBarAlignment; }
+            set { SetProperty(ref _SettingBarAlignment, value); }
+        }
+
         public DelegateCommand SaveCommand { get; set; }
         public DelegateCommand CancelCommand { get; set; }
+        public DelegateCommand PreviewCommand { get; set; }
+
         public Action<WebView2> loadWebView2Element;
 
         public Page0ViewModel()
         {
             //WebViewCollection = new ObservableCollection<WebViewModel>(Helper.ReadJosnFile());
             SaveCommand = new DelegateCommand(Save);
+            PreviewCommand = new DelegateCommand(ChangeWebViewBackgroundColor);
+            Helper.SettingBarAlignmentChanged += ChangeSettingBarAlignment;
             Load();
         }
 
-
+        public void ChangeSettingBarAlignment()
+        {
+            if (SettingBarAlignment == VerticalAlignment.Top)
+            {
+                SettingBarAlignment = VerticalAlignment.Bottom;
+            }
+            else
+            {
+                SettingBarAlignment = VerticalAlignment.Top;
+            }
+        }
 
         public async Task Load()
         {
@@ -80,6 +102,19 @@ namespace WPF_ScreenSaver_2025.ViewModels
         {
             //Debug.WriteLine(SelectedWebView.Name);
             Helper.SaveToJsonFile(WebViewCollection);
+        }
+
+        public async void ChangeWebViewBackgroundColor()
+        {
+            foreach (WebViewModel model in WebViewCollection)
+            {
+                model.WebView.DefaultBackgroundColor = Helper.Color_Transparent;
+            }
+            await Task.Delay(3000);
+            foreach (WebViewModel model in WebViewCollection)
+            {
+                model.WebView.DefaultBackgroundColor = Helper.Color_Gray;
+            }
         }
     }
 }

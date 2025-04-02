@@ -11,7 +11,7 @@
              d:DataContext="{d:DesignInstance Type=viewmodels:Page0ViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="1080" d:DesignWidth="1920" >
-    <Grid x:Name="Grid_Root" >
+    <Grid x:Name="Grid_Root" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <!--<TextBlock Text="Top Left" FontSize="24" Foreground="White" />
         <TextBlock Text="Bottom Left" FontSize="24" Foreground="White" Margin="0,1040,0,0"/>
         <TextBlock Text="Top Right" FontSize="24" Foreground="White" Margin="1810,0,0,0"/>
@@ -19,35 +19,38 @@
         <!--<wv2:WebView2 Width="800" Height="800" HorizontalAlignment="Right" x:Name="vvv"/>-->
         <!--<wv2:WebView2 x:Name="wv_Weather" HorizontalAlignment="Left" VerticalAlignment="Center"
                       ZoomFactor="{Binding wv_weather_zoomFactor, Mode=TwoWay}" Height="800" Width="800" Margin="0,0,0,0"/>-->
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Height="32" Background="White">
+        <StackPanel HorizontalAlignment="Center" d:VerticalAlignment="Bottom" 
+                    VerticalAlignment="{Binding SettingBarAlignment, Mode=OneWay}" 
+                    Orientation="Horizontal" Height="32" Background="White">
             <ComboBox VerticalContentAlignment="Center" Width="120" SelectedIndex="0"
                       ItemsSource="{Binding Path=WebViewCollection}" DisplayMemberPath="Name"
                       SelectedValuePath="Name" SelectedItem="{Binding SelectedWebView,Mode=TwoWay}">
             </ComboBox>
             <TextBlock Text="ZoomFactor:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.ZoomFactor, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
             <TextBlock Text="左:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.MarginLeft, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
             <TextBlock Text="右:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.MarginRight, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
             <TextBlock Text="上:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.MarginTop, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
             <TextBlock Text="下:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.MarginBottom, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
             <TextBlock Text="宽度:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.Width, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
             <TextBlock Text="高度:" VerticalAlignment="Center" Margin="4"/>
-            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="40"
+            <TextBox  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="4" Width="32"
                       Text="{Binding Path=SelectedWebView.Height, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
-            <Button Content="预览" Width="40"/>
+            <Button Content="预览" Command="{Binding PreviewCommand}" Width="40" />
             <Button Content="保存" Command="{Binding SaveCommand}" Width="40"/>
             <Button Content="取消" Command="{Binding CancelCommand}" Width="40"/>
+            <TextBlock Text="按下Q键切换栏位的位置(顶部/底部),Esc键退出,左右键切换页面" VerticalAlignment="Center" Margin="20,0,20,0" FontSize="14"/>
         </StackPanel>
     </Grid>
 </UserControl>

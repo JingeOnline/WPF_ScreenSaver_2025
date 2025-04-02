@@ -4,6 +4,7 @@ using Prism.Regions;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using WPF_ScreenSaver_2025.Helpers;
 using WPF_ScreenSaver_2025.Views;
 
 namespace WPF_ScreenSaver_2025.ViewModels
@@ -26,34 +27,43 @@ namespace WPF_ScreenSaver_2025.ViewModels
             set { SetProperty(ref _IsPageChanged, value); }
         }
 
+
+
         public DelegateCommand EscCommand { get; set; }
         public DelegateCommand NextCommand { get; set; }
         public DelegateCommand BackCommand { get; set; }
+        public DelegateCommand ControlCommand { get; set; }
 
         public MainWindowViewModel(IRegionManager regionManager)
         {
             _RegionManager = regionManager;
-            EscCommand = new DelegateCommand(EscKeyDown);
-            NextCommand = new DelegateCommand(RightKeyDown);
-            BackCommand = new DelegateCommand(LeftKeyDown);
+            EscCommand = new DelegateCommand(ShutDownApp);
+            NextCommand = new DelegateCommand(NextPage);
+            BackCommand = new DelegateCommand(BackPage);
+            ControlCommand = new DelegateCommand(SwitchSettingBarAlignment);
         }
 
-        private void EscKeyDown()
+        private void ShutDownApp()
         {
             Application.Current.Shutdown();
         }
 
-        private async void RightKeyDown()
+        private void SwitchSettingBarAlignment()
         {
-            IsPageChanged=true;
+             Helper.SettingBarAlignmentChanged?.Invoke();
+        }
+
+        private async void NextPage()
+        {
+            IsPageChanged = true;
             await Task.Delay(2000);
             _RegionManager.RequestNavigate("ContentRegion", nameof(Page1));
             IsPageChanged = false;
         }
 
-        private async void LeftKeyDown()
+        private async void BackPage()
         {
-            IsPageChanged=true;
+            IsPageChanged = true;
             await Task.Delay(2000);
             _RegionManager.RequestNavigate("ContentRegion", nameof(Page0));
             IsPageChanged = false;
