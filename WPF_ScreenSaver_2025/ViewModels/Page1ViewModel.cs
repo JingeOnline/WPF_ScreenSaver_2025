@@ -61,7 +61,7 @@ namespace WPF_ScreenSaver_2025.ViewModels
         {
             //这里等待1毫秒是为了让View的构造函数执行完，否则Action还来不急挂载
             await Task.Delay(1);
-            IEnumerable<WebViewModel> models = Helper.ReadJosnFile().Where(x => x.PageNumber == 1);
+            IEnumerable<WebViewModel> models = Helper.JsonWebViews.Where(x => x.PageNumber == 1);
             //WebViewCollection = new ObservableCollection<WebViewModel>(models);
             foreach (var item in models)
             {
