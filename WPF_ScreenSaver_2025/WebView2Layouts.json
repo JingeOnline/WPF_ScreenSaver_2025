@@ -24,6 +24,18 @@
     "Width": 800
   },
   {
+    "PageNumber": 0,
+    "Url": "<iframe src=\"https://free.timeanddate.com/clock/i9u0klei/n57/tlcn8/fn9/fs28/fcfff/tct/pct/ftb/tt0/tw1/tm1/th1/tb4\" frameborder=\"0\" width=\"295\" height=\"71\" allowtransparency=\"true\"></iframe>\n",
+    "Name": "wv_DateClock",
+    "ZoomFactor": 1,
+    "MarginTop": 800,
+    "MarginBottom": 0,
+    "MarginLeft": 1100,
+    "MarginRight": 0,
+    "Height": 400,
+    "Width": 400
+  },
+  {
     "PageNumber": 1,
     "Url": "<div class=\"tradingview-widget-container\">\n    <div class=\"tradingview-widget-container__widget\"></div>\n    <script type=\"text/javascript\" src=\"https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js\" async>\n    {\n    \"symbols\": [\n      [\n        \"FX_IDC:AUDCNY|12M\"\n      ]\n    ],\n    \"chartOnly\": false,\n    \"width\": \"100%\",\n    \"height\": \"100%\",\n    \"locale\": \"zh_CN\",\n    \"colorTheme\": \"dark\",\n    \"autosize\": true,\n    \"showVolume\": false,\n    \"showMA\": false,\n    \"hideDateRanges\": false,\n    \"hideMarketStatus\": false,\n    \"hideSymbolLogo\": false,\n    \"scalePosition\": \"right\",\n    \"scaleMode\": \"Normal\",\n    \"fontFamily\": \"-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif\",\n    \"fontSize\": \"15\",\n    \"noTimeScale\": false,\n    \"valuesTracking\": \"1\",\n    \"changeMode\": \"price-and-percent\",\n    \"chartType\": \"area\",\n    \"maLineColor\": \"#2962FF\",\n    \"maLineWidth\": 1,\n    \"maLength\": 9,\n    \"headerFontSize\": \"medium\",\n    \"backgroundColor\": \"rgba(15, 15, 15, 0)\",\n    \"lineWidth\": 2,\n    \"lineType\": 0,\n    \"dateRanges\": [\n      \"1d|1\",\n      \"1m|30\",\n      \"3m|60\",\n      \"12m|1D\",\n      \"60m|1W\",\n      \"all|1M\"\n    ],\n    \"lineColor\": \"rgba(76, 175, 80, 1)\",\n    \"topColor\": \"rgba(76, 175, 80, 0.6)\",\n    \"bottomColor\": \"rgba(99, 99, 99, 0)\"\n  }\n    </script>\n  </div>",
     "Name": "wv_RateAUDCNY",

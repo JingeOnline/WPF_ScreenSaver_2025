@@ -86,8 +86,9 @@ namespace WPF_ScreenSaver_2025.ViewModels
 
         public void Save()
         {
+            Helper.SaveAllWebViewsToJson();
             //Debug.WriteLine(SelectedWebView.Name);
-            Helper.SaveToJsonFile(WebViewCollection);
+            //Helper.SaveToJsonFile(WebViewCollection);
         }
 
         public async void ChangeWebViewBackgroundColor()

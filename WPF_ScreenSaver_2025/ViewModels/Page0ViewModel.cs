@@ -28,7 +28,7 @@ namespace WPF_ScreenSaver_2025.ViewModels
         //    get { return _SelectedWebView; }
         //    set { _SelectedWebView = value; }
         //}
-
+        //public IEnumerable<WebViewModel> AllWebViews;
         public ObservableCollection<WebViewModel> WebViewCollection { get; set; } =new ObservableCollection<WebViewModel>();
         private WebViewModel _SelectedWebView;
         public WebViewModel SelectedWebView
@@ -75,7 +75,7 @@ namespace WPF_ScreenSaver_2025.ViewModels
         {
             //这里等待1毫秒是为了让View的构造函数执行完，否则Action还来不急挂载
             await Task.Delay(1);
-            IEnumerable<WebViewModel> models = Helper.ReadJosnFile().Where(x => x.PageNumber == 0);
+            IEnumerable<WebViewModel> models = Helper.JsonWebViews.Where(x => x.PageNumber == 0);
             //WebViewCollection = new ObservableCollection<WebViewModel>(models);
             foreach (var item in models)
             {
@@ -101,7 +101,8 @@ namespace WPF_ScreenSaver_2025.ViewModels
         public void Save()
         {
             //Debug.WriteLine(SelectedWebView.Name);
-            Helper.SaveToJsonFile(WebViewCollection);
+            //Helper.SaveToJsonFile(WebViewCollection);
+            Helper.SaveAllWebViewsToJson();
         }
 
         public async void ChangeWebViewBackgroundColor()

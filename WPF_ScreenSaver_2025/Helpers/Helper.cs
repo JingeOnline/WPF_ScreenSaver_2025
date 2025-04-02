@@ -15,12 +15,17 @@ namespace WPF_ScreenSaver_2025.Helpers
 
         public static Action SettingBarAlignmentChanged {  get; set; }
 
+        public static IEnumerable<WebViewModel> JsonWebViews;
         #region 读写页面布局的配置文件
         private static readonly string SavingPath = "WebView2Layouts.json";
         public static void SaveToJsonFile(IEnumerable<WebViewModel> models)
         {
             string jsonString = JsonSerializer.Serialize(models);
             File.WriteAllText(SavingPath, jsonString);
+        }
+        public static void SaveAllWebViewsToJson()
+        {
+            SaveToJsonFile(JsonWebViews);
         }
         public static IEnumerable<WebViewModel> ReadJosnFile()
         {

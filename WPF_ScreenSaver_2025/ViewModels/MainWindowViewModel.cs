@@ -41,6 +41,7 @@ namespace WPF_ScreenSaver_2025.ViewModels
             NextCommand = new DelegateCommand(NextPage);
             BackCommand = new DelegateCommand(BackPage);
             ControlCommand = new DelegateCommand(SwitchSettingBarAlignment);
+            Helper.JsonWebViews = Helper.ReadJosnFile();
         }
 
         private void ShutDownApp()
